@@ -2,10 +2,21 @@ import React, { useState } from 'react';
 import LoginPage from './LoginPage';
 import SignupPage from './SignupPage';
 import Body from '../assets/Body.png';
-// import Body from ""
 import ContestPage from './ContestPage';
 import { useNavigate } from 'react-router-dom';
 import Footer from './Footer';
+
+
+import { BsRocketTakeoffFill,BsBook } from "react-icons/bs";
+import { IoSearch,IoBarChart } from "react-icons/io5";
+import { LuChartNoAxesCombined } from "react-icons/lu";
+import { SiCodementor } from "react-icons/si";
+import { TfiWrite } from "react-icons/tfi";
+import { TbTargetArrow } from "react-icons/tb";
+import { CiBank } from "react-icons/ci";
+import { MdOutlineTrain } from "react-icons/md";
+import { RiGovernmentLine } from "react-icons/ri";
+import { FaShield, FaShieldHalved } from "react-icons/fa6";
 
 
 export default function LandingPage() {
@@ -60,8 +71,8 @@ export default function LandingPage() {
                   }}
                   onBlur={() => setTimeout(() => setShowResourcesDropdown(false), 150)}
                   className={`px-3 py-1 rounded-md transition ${activeLink === item
-                      ? 'bg-white/20 text-white shadow-inner'
-                      : 'hover:text-white'
+                    ? 'bg-white/20 text-white shadow-inner'
+                    : 'hover:text-white'
                     }`}
                 >
                   {item}
@@ -92,7 +103,7 @@ export default function LandingPage() {
             >
               Signup
             </button>
-            
+
 
           </div>
         </header>
@@ -102,8 +113,8 @@ export default function LandingPage() {
           {/* Dark overlay for readability */}
           <div className="absolute inset-0 bg-black/50 z-0" />
           <div className="max-w-4xl mx-auto relative z-10">
-            <div className="inline-block bg-white/10 text-purple-200 px-4 py-1 rounded-full text-sm font-semibold mb-6 border border-white/20">
-              🚀 India's #1 Government Exam Platform
+            <div className="flex w-96 mx-auto justify-center place-items-center gap-3 bg-white/10 text-purple-200 px-4 py-1 rounded-full text-sm font-semibold mb-6 border border-white/20">
+              <BsRocketTakeoffFill/> India's #1 Government Exam Platform
             </div>
             <h2 className="text-5xl sm:text-6xl font-bold mb-2">Your Dream Job</h2>
             <h3 className="text-4xl sm:text-5xl font-bold mb-6 bg-gradient-to-r from-[#C084FC] via-[#F472B6] to-[#C084FC] text-transparent bg-clip-text">
@@ -117,7 +128,7 @@ export default function LandingPage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <div className="flex items-center px-4 py-2 bg-white/10 rounded-md w-full sm:w-72 text-left text-sm text-white placeholder:text-gray-400">
-                🔍
+                <IoSearch className='w-6 h-5' />
                 <input
                   type="text"
                   placeholder="Search your dream exam..."
@@ -161,22 +172,22 @@ export default function LandingPage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {[
             {
-              icon: "📖",
+              icon: <BsBook />,
               label: "Smart Learning",
               desc: "AI-powered personalized study plans"
             },
             {
-              icon: "📈",
+              icon: <LuChartNoAxesCombined />,
               label: "Progress Tracking",
               desc: "Real-time performance analytics"
             },
             {
-              icon: "🧑‍🏫",
+              icon: <SiCodementor />,
               label: "Expert Mentorship",
               desc: "1-on-1 guidance from toppers"
             },
             {
-              icon: "📝",
+              icon: <TfiWrite />,
               label: "Mock Tests",
               desc: "Unlimited practice with detailed solutions"
             }
@@ -210,7 +221,7 @@ export default function LandingPage() {
               desc: "Civil Services Examination",
               subjects: "23 Subjects",
               students: "2.5L+",
-              icon: "🎯",
+              icon: <TbTargetArrow />,
               border: "from-[#6366F1] to-[#3B82F6]"
             },
             {
@@ -218,7 +229,7 @@ export default function LandingPage() {
               desc: "Staff Selection Commission",
               subjects: "18 Subjects",
               students: "1.8L+",
-              icon: "📊",
+              icon: <IoBarChart />,
               border: "from-[#06B6D4] to-[#10B981]"
             },
             {
@@ -226,7 +237,7 @@ export default function LandingPage() {
               desc: "IBPS, SBI, RBI Exams",
               subjects: "15 Subjects",
               students: "3.2L+",
-              icon: "🏦",
+              icon: <CiBank />,
               border: "from-[#34D399] to-[#3B82F6]"
             },
             {
@@ -234,7 +245,7 @@ export default function LandingPage() {
               desc: "RRB, NTPC Examinations",
               subjects: "12 Subjects",
               students: "1.5L+",
-              icon: "🚄",
+              icon: <MdOutlineTrain />,
               border: "from-[#F97316] to-[#F59E0B]"
             },
             {
@@ -242,7 +253,7 @@ export default function LandingPage() {
               desc: "State Public Service Commission",
               subjects: "20 Subjects",
               students: "900K+",
-              icon: "🏛️",
+              icon: <RiGovernmentLine />,
               border: "from-[#EC4899] to-[#8B5CF6]"
             },
             {
@@ -250,7 +261,7 @@ export default function LandingPage() {
               desc: "NDA, CDS, AFCAT",
               subjects: "10 Subjects",
               students: "600K+",
-              icon: "🛡️",
+              icon: <FaShieldHalved />,
               border: "from-[#F59E0B] to-[#F43F5E]"
             }
           ].map((item, idx) => (
@@ -279,7 +290,7 @@ export default function LandingPage() {
               </div>
 
               {/* CTA Button */}
-              <button className="mt-auto w-full text-sm font-medium text-white rounded-lg py-2 bg-gradient-to-r from-[#DB2777] to-[#9333EA]" onClick={()=> navigate(`/afterLogin`)}>
+              <button className="mt-auto w-full text-sm font-medium text-white rounded-lg py-2 bg-gradient-to-r from-[#DB2777] to-[#9333EA]" onClick={() => navigate(`/afterLogin`)}>
                 Explore Syllabus
               </button>
 

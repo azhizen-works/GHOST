@@ -43,7 +43,7 @@ const CurrentAffairs = () => {
         <p className="text-gray-600">
           Stay informed with curated, in-depth coverage of the world’s most important stories
         </p>
-        <div className="mt-6 flex flex-wrap justify-center gap-3">
+        <div className="mt-6 flex flex-wrap justify-center gap-3 ">
           {categories.map((cat) => (
             <span
               key={cat}
@@ -51,7 +51,7 @@ const CurrentAffairs = () => {
                 setSelectedCategory(cat);
                 setVisibleCards(3);
               }}
-              className={`px-4 py-1 rounded-full text-sm cursor-pointer ${
+              className={`px-4 py-1 rounded-full text-sm cursor-pointer hover:scale-105 transition ${
                 cat === selectedCategory
                   ? "bg-blue-500 text-white"
                   : "bg-gray-100"
@@ -65,10 +65,10 @@ const CurrentAffairs = () => {
 
       {/* Featured Story */}
       {featuredStory && (
-        <section className="max-w-4xl mx-auto px-4">
+        <section className="max-w-4xl mx-auto px-4 ">
           <h2 className="text-2xl font-semibold mb-4">Featured Story</h2>
           <div
-            className="flex flex-col md:flex-row bg-gray-100 rounded-xl overflow-hidden cursor-pointer"
+            className="flex flex-col md:flex-row bg-gray-100 rounded-xl overflow-hidden cursor-pointer hover:scale-105 transition"
             onClick={() => navigate(`/currentAffairs/${featuredStory.id}`)}
           >
             <div className="md:w-1/2 h-64 md:h-auto bg-gray-300"></div>
@@ -93,7 +93,7 @@ const CurrentAffairs = () => {
           {filteredNews.slice(0, visibleCards).map((news) => (
             <div
               key={news.id}
-              className="w-72 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer"
+              className="w-72 bg-white rounded-xl shadow-md overflow-hidden cursor-pointer hover:scale-105 transition"
               onClick={() => navigate(`/currentAffairs/${news.id}`)}
             >
               <div className="bg-green-600 h-32"></div>

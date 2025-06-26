@@ -8,6 +8,11 @@ import Footer from './Footer';
 import Navbar from './NavBar';
 
 
+import { FaArrowRightLong } from "react-icons/fa6";
+import { PiWarningCircleLight } from "react-icons/pi";
+import { SiTarget } from "react-icons/si";
+
+
 
 const examCategories = [
   {
@@ -163,7 +168,7 @@ const AfterLogin = () => {
     <>
 
       {/* <header className="flex items-center justify-between px-6 sm:px-14 py-6 backdrop-blur-md bg-white/10 text-black rounded-b-lg z-50 sticky top-0"> */}
-        <Navbar />
+      <Navbar />
       {/* </header> */}
 
 
@@ -216,8 +221,8 @@ const AfterLogin = () => {
             </div>
           </div>
 
-          <button className="mt-8 bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full shadow-md hover:bg-yellow-300   hover:scale-105 transition">
-            Watch demo →
+          <button className="flex place-items-center justify-center gap-3 mt-8 bg-yellow-400 text-black font-semibold px-6 py-3 rounded-full shadow-md hover:bg-yellow-300   hover:scale-105 transition">
+            Watch demo <FaArrowRightLong className='mt-1' />
           </button>
         </div>
         <div className="mt-10 md:mt-0 w-full max-w-md bg-white/10 backdrop-blur-md rounded-2xl p-6 shadow-lg">
@@ -225,7 +230,7 @@ const AfterLogin = () => {
           <div className="grid grid-cols-2 gap-4">
             {/* Card 1 */}
             <div className="bg-white/10 hover:bg-white/20  hover:scale-105 p-4 rounded-xl flex gap-3 transition-all">
-              <div className="bg-green-500 text-white p-2 rounded-lg">
+              <div className="bg-green-500 text-white p-2 rounded-lg w-10 h-10">
                 <FaClipboardList className="text-xl" />
               </div>
               <div>
@@ -236,7 +241,7 @@ const AfterLogin = () => {
 
             {/* Card 2 */}
             <div className="bg-white/10 hover:bg-white/20  hover:scale-105 p-4 rounded-xl flex gap-3 transition-all">
-              <div className="bg-purple-500 text-white p-2 rounded-lg">
+              <div className="bg-purple-500 text-white p-2 rounded-lg w-10 h-10">
                 <FaCalendarCheck className="text-xl" />
               </div>
               <div>
@@ -247,7 +252,7 @@ const AfterLogin = () => {
 
             {/* Card 3 */}
             <div className="bg-white/10 hover:bg-white/20  hover:scale-105 p-4 rounded-xl flex gap-3 transition-all">
-              <div className="bg-orange-400 text-white p-2 rounded-lg">
+              <div className="bg-orange-400 text-white p-2 rounded-lg w-10 h-10">
                 <FaChartPie className="text-xl" />
               </div>
               <div>
@@ -261,7 +266,7 @@ const AfterLogin = () => {
               onClick={() => setShowPopup(true)}
               className="bg-white/10 hover:bg-white/20 hover:scale-105 p-4 rounded-xl flex gap-3 transition-all cursor-pointer"
             >
-              <div className="bg-red-500 text-white p-2 rounded-lg">
+              <div className="bg-red-500 text-white p-2 rounded-lg w-10 h-10">
                 <FaChalkboardTeacher className="text-xl" />
               </div>
               <div>
@@ -269,29 +274,30 @@ const AfterLogin = () => {
                 <p className="text-xs text-blue-100">Join Expert Session</p>
               </div>
             </div>
+          </div>
 
-            {/* Progress */}
-            <div className="mt-6">
-              <div className="flex justify-between text-sm text-white mb-1">
-                <span>Today's Progress</span>
-                <span>70% Completed</span>
-              </div>
-              <div className="w-full h-2 bg-white/20 rounded-full overflow-hidden">
-                <div
-                  className="h-2 bg-gradient-to-r from-purple-500 via-pink-400 to-purple-600 rounded-full"
-                  style={{ width: '70%' }}
-                ></div>
-              </div>
-              <p className="text-xs text-blue-100 mt-1">Keep the Momentum</p>
+          {/* Progress */}
+          <div className="mt-6">
+            <div className="flex justify-between text-sm text-white mb-1">
+              <span>Today's Progress</span>
+              <span>70% Completed</span>
             </div>
+            <div className="w-full h-2 bg-white/20 rounded-full overflow-hidden">
+              <div
+                className="h-2 bg-gradient-to-r from-purple-500 via-pink-400 to-purple-600 rounded-full"
+                style={{ width: '70%' }}
+              ></div>
+            </div>
+            <p className="text-xs text-blue-100 mt-1">Keep the Momentum</p>
+          </div>
 
 
-            {/* Participate Button */}
-            <button className="w-full mt-5 bg-white/20  hover:scale-105 text-white font-semibold py-2 rounded-lg hover:bg-white/30 transition" onClick={() => navigate(`/contest`)}>
-              Participate Contest
-            </button>
+          {/* Participate Button */}
+          <button className="w-full mt-5 bg-white/20  hover:scale-105 text-white font-semibold py-2 rounded-lg hover:bg-white/30 transition" onClick={() => navigate(`/contest`)}>
+            Participate Contest
+          </button>
 
-            {/* Popup */}
+          {/* Popup
             {showPopup && (
               <div className="mt-4 bg-blue-100 p-4 rounded-lg shadow text-sm text-blue-900">
                 <p className="font-semibold">Live Class Info</p>
@@ -299,8 +305,7 @@ const AfterLogin = () => {
                   Join the expert session now! This popup will close in 2 minutes.
                 </p>
               </div>
-            )}
-          </div>
+            )} */}
         </div>
       </div>
 
@@ -332,11 +337,10 @@ const AfterLogin = () => {
       </div>
 
       <div className="w-full flex flex-wrap justify-center gap-6 mt-8">
-        <div className="bg-white rounded-2xl p-6 shadow-md transition-transform transform hover:-translate-y-2 hover:shadow-xl"></div>
         {examCategories.map((cat) => (
           <div
             key={cat.title}
-            className="w-[300px] bg-white rounded-lg shadow-md overflow-hidden flex flex-col hover:scale-105"
+            className="w-[300px] bg-white rounded-lg shadow-md overflow-hidden flex flex-col hover:scale-105 transition "
             style={{ minHeight: 305 }}
           >
             <div className={`flex items-center justify-between px-4 py-4 ${cat.color}`}>
@@ -420,11 +424,11 @@ const AfterLogin = () => {
           </p>
           <div className="flex flex-col md:flex-row gap-6">
             {/* Left: Articles */}
-            <div className="flex-1 flex flex-col gap-4">
+            <div className="flex-1 flex flex-col gap-4 ">
               {articles.map((art, i) => (
                 <div
                   key={i}
-                  className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm flex flex-col gap-2 cursor-pointer" onClick={() => navigate(`/currentAffairs`)}
+                  className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm flex flex-col gap-2 cursor-pointer hover:scale-105 transition" onClick={() => navigate(`/currentAffairs`)}
                 >
                   <div className="flex items-center gap-2 mb-1">
                     <span className={`text-xs font-medium px-2 py-1 rounded ${art.categoryColor}`}>
@@ -452,8 +456,9 @@ const AfterLogin = () => {
             <div className="w-full md:w-[320px] flex flex-col gap-4">
               <div className="bg-blue-50 rounded-xl p-4 shadow-sm">
                 <div className="flex items-center mb-2">
-                  <span className="inline-block w-6 h-6 bg-sky-200 text-sky-700 items-center justify-center rounded-full mr-2">
-                    <svg width="16" height="16" fill="currentColor"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM8 0a8 8 0 110 16A8 8 0 018 0zm.75 4.75a.75.75 0 00-1.5 0v4.5c0 .414.336.75.75.75s.75-.336.75-.75v-4.5zm-.75 8a.75.75 0 100-1.5.75.75 0 000 1.5z"></path></svg>
+                  <span className="inline-block content-center w-6 h-6 bg-sky-200 text-sky-700 items-center justify-center rounded-full mr-2">
+                    {/* <svg width="16" height="16" fill="currentColor"><path d="M8 1.5a6.5 6.5 0 100 13 6.5 6.5 0 000-13zM8 0a8 8 0 110 16A8 8 0 018 0zm.75 4.75a.75.75 0 00-1.5 0v4.5c0 .414.336.75.75.75s.75-.336.75-.75v-4.5zm-.75 8a.75.75 0 100-1.5.75.75 0 000 1.5z"></path></svg> */}
+                    <PiWarningCircleLight className='ml-1 font-bold' />
                   </span>
                   <span className="font-semibold text-sky-800 text-sm">Today's Quick Updates</span>
                 </div>
@@ -471,8 +476,9 @@ const AfterLogin = () => {
               </div>
               <div className="bg-orange-50 rounded-xl p-4 shadow-sm">
                 <div className="flex items-center mb-2">
-                  <span className="inline-block w-6 h-6 bg-orange-200 text-orange-700  items-center justify-center rounded-full mr-2">
-                    <svg width="16" height="16" fill="currentColor"><circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="2" fill="none" /><circle cx="8" cy="8" r="2" fill="currentColor" /></svg>
+                  <span className="inline-block content-center w-6 h-6 bg-orange-200 text-orange-700  items-center justify-center rounded-full mr-2">
+                    {/* <svg width="16" height="16" fill="currentColor"><circle cx="8" cy="8" r="7" stroke="currentColor" strokeWidth="2" fill="none" /><circle cx="8" cy="8" r="2" fill="currentColor" /></svg> */}
+                    <SiTarget className='ml-1' />
                   </span>
                   <span className="font-semibold text-orange-800 text-sm">Important Dates</span>
                 </div>
