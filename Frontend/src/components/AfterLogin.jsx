@@ -406,6 +406,7 @@ const AfterLogin = () => {
               <p className="text-sm text-gray-600 mt-4">
                 More resources and practice sets will be available here soon. Stay tuned!
               </p>
+              <button className='mt-4 bg-blue-400 w-full p-2 rounded text-white font-semibold' onClick={()=> navigate(`/CourseEnroll`)}>Enroll Now</button>
             </div>
           </div>
         </div>

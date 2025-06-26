@@ -13,6 +13,7 @@ import Dashboard from './components/Dashboard';
 import Leaderboard from './components/LeaderBoard';
 import LandingPage from './components/LandingPage';
 import ContestPage from './components/ContestPage';
+import CourseDetails from './components/CourseDetails';
 
 
 
@@ -39,6 +40,7 @@ function App() {
         <Route path='/currentAffairs' element={<CurrentAffairs />} />
         <Route path='/currentAffairs/:id' element={ <NewsDetail />} />
         <Route path='/contest' element={<ContestPage />} />
+        <Route path='/CourseEnroll' element={<CourseDetails />} />
         
       </Routes>
     </Router>
